@@ -1,7 +1,9 @@
+// Global variables nevessary for tracking score
 let playerNumberWins = 0;
 let computerNumberWins = 0;
 let numberOfTie = 0;
 
+// Function that allows computer to choose
 let computerChoice = () => {
   let randomNumber = Math.random() * 3;
   if (randomNumber <= 1) {
@@ -13,11 +15,13 @@ let computerChoice = () => {
   }
 };
 
+// Function that allows the player to choose
 let playerChoice = () => {
   let playerSelection = prompt("Rock,Paper, or Scissors?");
   return playerSelection.toLowerCase();
 };
 
+// Funtion that plays a round, modifies global score variable of outcome
 let playRound = () => {
   const playerSelection = playerChoice();
   const computerSelection = computerChoice();
@@ -63,6 +67,7 @@ let playRound = () => {
   }
 };
 
+// Funtion that displays the current score
 let displayOutcome = () => {
   return `
   Player Score : ${playerNumberWins}
@@ -70,12 +75,14 @@ let displayOutcome = () => {
   Tie Score : ${numberOfTie}`;
 };
 
+// Function used to reset the global score variables for a new game
 let resetScore = () => {
   playerNumberWins = 0;
   computerNumberWins = 0;
   numberOfTie = 0;
 };
 
+// Function that plays an entire game
 let game = () => {
   for (let i = 1; i <= 5; i++) {
     playRound();
