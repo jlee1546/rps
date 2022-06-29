@@ -8,10 +8,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  background: url("assets/coliseum.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .score-board {
-  background-color: green;
+  background: url("assets/jessica-rigollot-2A2n24MW3V4-unsplash.jpeg");
+  background-size: cover;
   width: 40%;
   height: 30%;
   position: relative;
@@ -20,6 +25,9 @@ body {
   justify-content: space-between;
   padding: 25px;
   font-weight: bold;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border: 5px solid rgb(102, 141, 185);
 }
 .player,
 .computer {
