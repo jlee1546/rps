@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.score-board {
+  background-color: green;
+  width: 40%;
+  height: 30%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 25px;
+  font-weight: bold;
+}
+.player,
+.computer {
+  width: 200px;
+  text-align: center;
+}
+
+.round,
+.tie {
+  width: 50px;
+}
+
+.break {
+  width: 200px;
+}
+
+.tie {
+  text-align: center;
+}
+
+.display1 {
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  flex-grow: 3;
+}
+
+.display2 {
+  background-color: white;
+  text-align: center;
+
+  flex-grow: 1;
+}
