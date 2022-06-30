@@ -6,8 +6,9 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background: url("assets/coliseum.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,20 +16,21 @@ body {
 }
 
 .score-board {
-  background: url("assets/jessica-rigollot-2A2n24MW3V4-unsplash.jpeg");
+  background: url("assets/rockWall2.jpeg");
   background-size: cover;
   width: 40%;
-  height: 30%;
-  position: relative;
+  height: 40%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 25px;
   font-weight: bold;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 25%;
+  border-bottom-left-radius: 25%;
   border: 5px solid rgb(102, 141, 185);
 }
+
 .player,
 .computer {
   width: 200px;
@@ -49,7 +51,8 @@ body {
 }
 
 .display1 {
-  background-color: white;
+  background-color: rgb(42, 41, 41);
+  color: white;
   width: 50%;
   margin: auto;
   text-align: center;
@@ -61,4 +64,21 @@ body {
   text-align: center;
 
   flex-grow: 1;
+}
+
+.message-display {
+  width: 40%;
+  height: 10%;
+}
+
+.message {
+  width: 90%;
+  height: 90%;
+  background: white;
+  text-align: center;
+  margin: auto;
+}
+
+.user-interface img {
+  width: 50px;
 }
