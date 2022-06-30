@@ -3,6 +3,16 @@ let playerNumberWins = 0;
 let computerNumberWins = 0;
 let numberOfTie = 0;
 
+let selections = document.querySelectorAll(".selections");
+selections.forEach((selection) =>
+  selection.addEventListener("click", function (e) {
+    const player = e.target.getAttribute("id");
+    const computer = computerChoice();
+    playRound(player, computer);
+    changeMessage(player.toUpperCase(), computer.toUpperCase());
+  })
+);
+
 // Function that allows computer to choose
 let computerChoice = () => {
   let randomNumber = Math.random() * 3;
@@ -16,19 +26,18 @@ let computerChoice = () => {
 };
 
 // Function that allows the player to choose
-let playerChoice = () => {
-  let playerSelection = prompt("Rock,Paper, or Scissors?");
-  return playerSelection.toLowerCase();
+// let playerChoice = () => {
+
+// };
+
+// Funtions that changes the message displayed
+let changeMessage = (player, computer) => {
+  const message = document.querySelector(".message");
+  message.textContent = `Player chooses ${player} and Computer chooses ${computer}`;
 };
 
 // Funtion that plays a round, modifies global score variable of outcome
-let playRound = () => {
-  const playerSelection = playerChoice();
-  const computerSelection = computerChoice();
-
-  console.log(`Computer chooses ${computerSelection}`);
-  console.log(`Player chooses ${playerSelection}`);
-
+let playRound = (playerSelection, computerSelection) => {
   if (playerSelection === "rock") {
     if (computerSelection === "paper") {
       console.log("Computer Wins!");
@@ -68,12 +77,7 @@ let playRound = () => {
 };
 
 // Funtion that displays the current score
-let displayOutcome = () => {
-  return `
-  Player Score : ${playerNumberWins}
-  Computer Score : ${computerNumberWins}
-  Tie Score : ${numberOfTie}`;
-};
+let displayOutcome = () => {};
 
 // Function used to reset the global score variables for a new game
 let resetScore = () => {
@@ -82,11 +86,8 @@ let resetScore = () => {
   numberOfTie = 0;
 };
 
-// Function that plays an entire game
-let game = () => {
-  for (let i = 1; i <= 5; i++) {
-    playRound();
-  }
-  console.log(displayOutcome());
-  resetScore();
-};
+//Function that plays an entire game
+// let game = () => {
+//   playRound(playerChoice, computerChoice);
+//   resetScore();
+// };
