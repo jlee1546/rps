@@ -4,19 +4,6 @@ let computerNumberWins = 0;
 let numberOfTie = 0;
 let roundNumber = 1;
 
-const selections = document.querySelectorAll(".selections");
-selections.forEach((selection) =>
-  selection.addEventListener("click", function (e) {
-    const player = e.target.getAttribute("id");
-    const computer = computerChoice();
-    const round = playRound(player, computer);
-    changeMessage(player.toUpperCase(), computer.toUpperCase(), round);
-    updateScoreBoard();
-    incrementRoundNUmber();
-    checkForWinner();
-  })
-);
-
 // Function that allows computer to choose
 const computerChoice = () => {
   let randomNumber = Math.random() * 3;
@@ -41,35 +28,35 @@ const playRound = (playerSelection, computerSelection) => {
   if (playerSelection === "rock") {
     if (computerSelection === "paper") {
       computerNumberWins++;
-      return "Computer Wins!";
+      return "Computer Wins this round!";
     } else if (computerSelection === "scissors") {
       playerNumberWins++;
-      return "Player Wins!";
+      return "Player Wins this round!";
     } else {
       numberOfTie++;
-      return "It's a Tie!";
+      return "This round is a Tie!";
     }
   } else if (playerSelection === "paper") {
     if (computerSelection === "rock") {
       playerNumberWins++;
-      return "Player Wins!";
+      return "Player Wins this round!";
     } else if (computerSelection === "scissors") {
       computerNumberWins++;
-      return "Computer Wins";
+      return "Computer Wins this round";
     } else {
       numberOfTie++;
-      return "It's a Tie!";
+      return "This round is a Tie!";
     }
   } else if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
       computerNumberWins++;
-      return "Computer Wins!";
+      return "Computer Wins this round!";
     } else if (computerSelection === "paper") {
       playerNumberWins++;
-      return "Player Wins";
+      return "Player Wins this round";
     } else {
       numberOfTie++;
-      return "It's a Tie!";
+      return "This round is a Tie!";
     }
   } else {
     return "Cannot be determined!";
@@ -98,9 +85,9 @@ const incrementRoundNUmber = () => {
 const declareWinner = (winner) => {
   const message = document.querySelector(".message");
   if (winner === "player") {
-    message.textContent = "Player Wins!";
+    message.textContent = "With a score of 5, Player Wins the game!";
   } else {
-    message.textContent = "Computer Wins!";
+    message.textContent = "With a score of 5, Computer Wins the game!";
   }
 };
 
@@ -131,7 +118,18 @@ const resetScore = () => {
 };
 
 //Function that plays an entire game
-// let game = () => {
-//   playRound(playerChoice, computerChoice);
-//   resetScore();
-// };
+const playGame = (e) => {
+  const player = e.target.getAttribute("id");
+  const computer = computerChoice();
+  const round = playRound(player, computer);
+  changeMessage(player.toUpperCase(), computer.toUpperCase(), round);
+  updateScoreBoard();
+  incrementRoundNUmber();
+  checkForWinner();
+};
+
+//Add eventlisteners for game play
+const selections = document.querySelectorAll(".selections");
+selections.forEach((selection) =>
+  selection.addEventListener("click", playGame)
+);
