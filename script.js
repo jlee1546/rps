@@ -85,9 +85,11 @@ const incrementRoundNUmber = () => {
 const declareWinner = (winner) => {
   const message = document.querySelector(".message");
   if (winner === "player") {
-    message.textContent = "With a score of 5, Player Wins the game!";
+    message.textContent =
+      "With a score of 5, Player Wins the game! To play again, make a choice below! ";
   } else {
-    message.textContent = "With a score of 5, Computer Wins the game!";
+    message.textContent =
+      "With a score of 5, Computer Wins the game! To play again, make a choice below! ";
   }
 };
 
