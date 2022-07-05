@@ -102,8 +102,8 @@ const checkForWinner = () => {
     updateScoreBoard();
   } else if (computerScore === 5) {
     declareWinner("computer");
-    updateScoreBoard();
     resetScore();
+    updateScoreBoard();
   } else {
     return;
   }
