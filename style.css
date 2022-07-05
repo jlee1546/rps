@@ -11,8 +11,12 @@ body {
   align-items: center;
   background: url("assets/coliseum.jpeg");
   background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
+  background-attachment: fixed;
   overflow: hidden;
+
+  opacity: 0.8;
 }
 
 .score-board {
@@ -20,65 +24,75 @@ body {
   background-size: cover;
   width: 40%;
   height: 40%;
+  max-width: 525px;
+  max-height: 225px;
+  min-width: 275px;
+  min-height: 225px;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 25px;
   font-weight: bold;
-  border-bottom-right-radius: 25%;
-  border-bottom-left-radius: 25%;
-  border: 5px solid rgb(102, 141, 185);
+  border-radius: 10px;
+  border: 2px solid rgb(102, 141, 185);
 }
 
 .player,
 .computer {
-  width: 200px;
+  width: 35%;
   text-align: center;
 }
 
 .round,
 .tie {
-  width: 50px;
+  text-align: center;
 }
 
 .break {
-  width: 200px;
-}
-
-.tie {
-  text-align: center;
+  width: 25%;
 }
 
 .display1 {
-  background-color: rgb(42, 41, 41);
-  color: white;
+  background-color: white;
+  color: rgb(42, 41, 41);
   width: 50%;
   margin: auto;
   text-align: center;
-  flex-grow: 3;
 }
 
 .display2 {
   background-color: white;
   text-align: center;
-
-  flex-grow: 1;
 }
 
 .message-display {
   width: 40%;
-  height: 10%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 525px;
+  max-height: 225px;
+  min-width: 275px;
+  min-height: 225px;
 }
 
 .message {
   width: 90%;
   height: 90%;
-  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin: auto;
 }
 
 .user-interface img {
   width: 50px;
+}
+
+@media (min-height: 480px) {
+  body {
+  }
 }
